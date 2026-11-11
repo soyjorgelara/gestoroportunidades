@@ -152,7 +152,7 @@ clear.addEventListener('click', () => {
   render();
   (interestsDialog.open ? interestsDialog.querySelector('[data-close]') : document.querySelector('#filters-open')).focus({ preventScroll: true });
 });
-
+ 
 // Punto de integración, sin inventar una pantalla posterior al flujo solicitado.
 next.addEventListener('click', () => {
   const interests = [...selected].map(key => {
