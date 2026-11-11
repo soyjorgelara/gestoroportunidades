@@ -10,3 +10,33 @@
 /* Mobile: apilado fluido, incluyendo el ancho solicitado de 402 px. */
 @media(max-width:700px){.topbar{padding:12px 24px}.logo{max-width:112px}.product-name{display:none}.sidebar{display:none}.profile{gap:20px}.welcome{padding:24px}.welcome p{font-size:14px;line-height:21px}.workspace{padding:24px}.card{padding:20px;min-height:0;box-shadow:8px 8px 4px #0005}.columns{grid-template-columns:minmax(0,1fr);gap:20px}.accordion-list{max-height:440px}.interests{min-height:300px}.empty{min-height:200px}.primary{width:100%}.panel-heading{padding-bottom:16px}.option{grid-template-columns:40px minmax(0,1fr)}summary strong{flex-basis:auto}.badge{order:initial;font-size:10px;padding:2px 8px;gap:4px}summary{gap:8px}.selected-groups{max-height:340px}}
 @media(max-width:402px){.workspace{padding:20px 16px}.card{padding:16px}.panel{padding:14px}.categories{padding-bottom:0}h1{font-size:24px}.badge{font-size:9px}summary{padding:12px 10px;gap:6px}summary strong{font-size:12px}.accordion-list{padding-right:4px}.powered{display:none}}
+
+/* Los metadatos mobile nunca se muestran junto al badge de escritorio. */
+.mobile-total,.mobile-selected,.responsive-only{display:none}
+.outline{background:transparent;border:1px solid var(--text);border-radius:40px;min-height:40px;padding:8px 20px;font-size:16px}
+.text-button{background:none;border:0;padding:6px 12px;font-size:12px;text-decoration:underline}
+.search-results{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.search-results p{overflow-wrap:anywhere}.no-results{padding:32px 12px;text-align:center;color:var(--muted)}
+.modal-open{overflow:hidden}.modal{color:var(--text);font:inherit;background:var(--background);border:1px solid #3f4965;border-radius:24px;padding:24px;width:440px;max-width:calc(100% - 40px);max-height:calc(100dvh - 48px);overflow:auto;box-shadow:12px 12px 16px #0004}.modal::backdrop{background:#0005}.modal-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.modal-heading h2{border:0;padding:0;font-size:18px;font-weight:700}.modal-close{font:30px/1 Arial;min-width:32px;min-height:32px}.modal-actions{display:flex;gap:16px;margin-top:24px}.modal-actions>button{width:auto;min-width:0;flex:1;white-space:nowrap}
+.search-field{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:#101218;padding:8px;min-height:48px;color:var(--line)}.search-field:focus-within{outline:2px solid #83b7ff}.search-field input{width:100%;min-width:0;background:transparent;color:var(--text);border:0;outline:0;font:inherit}.search-field input::placeholder{color:var(--line)}.search-field input::-webkit-search-cancel-button{display:none}.search-field .icon-button{font:26px Arial}
+.interests-modal{width:460px;padding:30px;position:fixed}.interests-modal>.modal-close{position:absolute;right:20px;top:30px}.interests-modal .interests{background:transparent;border:0;padding:0;gap:32px;min-height:0;overflow:visible}.interests-modal .panel-heading{border:0;padding:0 36px 0 0;min-height:36px}.interests-modal h3{font-size:24px;line-height:36px;font-weight:700}.interests-modal #clear{display:none}.interests-modal .selected-groups{max-height:calc(100dvh - 300px);min-height:100px;overflow:auto}.interests-footer{margin-top:24px;border-top:1px solid var(--line);padding-top:24px}.interests-footer button{width:100%;min-height:48px}.danger{color:#ff4949;border-color:#ff4949}#interests-slot{min-height:0;max-height:calc(100dvh - 220px);overflow:auto}
+/* Tablet: el mismo panel se mueve al modal sin duplicar datos. */
+@media(max-width:1024px){.columns{grid-template-columns:minmax(0,1fr)}.responsive-only{display:inline-flex;justify-content:center;align-items:center}.actions{gap:16px}.actions>.outline,.actions>.primary{flex:1;width:auto}.card{height:auto}.powered{display:none}}
+/* Mobile: solo el contador en texto; se oculta el badge de escritorio. */
+@media(max-width:700px){
+  html,body,main,.workspace{background:#1f222e}
+  .welcome,.card{background:#313649}
+  .card{border:2px solid #3f465c;border-radius:18px;padding:24px 22px;gap:24px;box-shadow:10px 12px 5px #0005}
+  .card>h2{display:none}.categories{background:transparent;border:0;padding:0;gap:24px;overflow:visible}.categories .panel-heading{padding-bottom:24px;border-color:#617196}.categories h3{font-size:16px;font-weight:400}
+  .accordion-list{gap:12px;max-height:384px;padding:0;scrollbar-color:#617196 transparent}
+  .accordion{background:#1f222e;border:1px solid #3b4258;border-radius:12px;box-shadow:3px 5px 4px #0003}
+  .accordion summary{display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:4px 12px;min-height:101px;padding:14px 15px;position:relative}
+  .accordion summary strong{grid-column:1;font-size:14px;line-height:21px;font-weight:700}
+  .accordion summary::after{grid-column:2;grid-row:1 / 4;align-self:center;justify-self:center;font-size:24px}
+  .accordion .badge{display:none}
+  .mobile-total{display:block;grid-column:1;color:#d3d7e4;font-size:12px;line-height:18px}
+  .mobile-selected{display:block;grid-column:1;margin-top:6px;padding-left:10px;color:#f6f7f9;font-size:12px;line-height:18px;white-space:pre}
+  .accordion[open]{border-color:#617196}.accordion[open] summary{background:#1f222e;border-bottom-color:#617196}
+  .actions{flex-direction:column;gap:16px}.actions>.outline,.actions>.primary{width:100%;flex:auto;min-height:40px;font-size:16px}
+  .modal-actions{gap:10px}.modal-actions>button{font-size:12px;padding-inline:8px}.search-field input{font-size:12px}
+}
+@media(max-width:402px){.workspace{padding:24px}.card{padding:24px 22px}.welcome{padding:24px}.welcome p{font-size:16px;line-height:24px}}
